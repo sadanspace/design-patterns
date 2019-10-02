@@ -18,10 +18,10 @@ public class Main {
 
         Dog[] dogs = {new Dog(2), new Dog(3), new Dog(1)};
 
-        sorter.sort(cats);
+        sorter.sort(cats, new CatWightComparator());
         System.out.println(Arrays.toString(cats));
 
-        sorter.sort(dogs);
+        sorter.sort(dogs, new DogComparator());
         System.out.println(Arrays.toString(dogs));
     }
 }
