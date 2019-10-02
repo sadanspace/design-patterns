@@ -1,6 +1,6 @@
 package strategy;
 
-public class Cat {
+public class Cat implements Comparable{
     int wight, hight;
 
     public Cat(){}
@@ -9,7 +9,8 @@ public class Cat {
         this.wight = wight;
     }
 
-    public int compareTo(Cat cat){
+    public int compareTo(Object o){
+        Cat cat = (Cat)o;
         if (hight > cat.hight) {return 1;}
         else if (hight < cat.hight) {return -1;}
         else return 0;
