@@ -12,10 +12,19 @@ public class Sorter {
         }
     }
 
-    //sort(int)
+    public void sort(Dog[] dogs) {
+        for(int i=0; i<dogs.length - 1; i++) {
+            int minPos = i;
 
-    void swap(Cat[] arr, int i, int j) {
-        Cat temp = arr[i];
+            for(int j=i+1; j<dogs.length; j++) {
+                minPos = dogs[j].compareTo(dogs[minPos]) == -1 ? j : minPos;
+            }
+            swap(dogs, i, minPos);
+        }
+    }
+
+    void swap(Object[] arr, int i, int j) {
+        Object temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
