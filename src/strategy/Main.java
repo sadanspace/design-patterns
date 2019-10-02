@@ -4,8 +4,10 @@ import java.util.Arrays;
 
 /**
  * 策略模式
- * Comparable
- * Compartor
+ * Comparable: compareTo接口，实现比较
+ * Compartor: compare接口，基于不同的比较策略，进行比较
+ *
+ * 猫基于不同的属性进行比较，也也可以基于不同属性的组合进行比较猫的大小，这些不同的比较方式的实现就是策略模式的实现。
  */
 
 public class Main {
@@ -21,7 +23,12 @@ public class Main {
         sorter.sort(cats, new CatWightComparator());
         System.out.println(Arrays.toString(cats));
 
-        sorter.sort(dogs, new DogComparator());
+        Sorter<Dog> dogSorter = new Sorter<>();
+        dogSorter.sort(dogs, (o1, o2)->{
+            if (o1.food > o2.food) return 1;
+            else if (o1.food < o2.food) return -1;
+            return 0;
+        });
         System.out.println(Arrays.toString(dogs));
     }
 }
