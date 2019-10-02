@@ -1,5 +1,5 @@
 package strategy;
 
-public interface Comparable {
-    public int compareTo(Object o);
+public interface Comparable<T> {
+    public int compareTo(T o);
 }

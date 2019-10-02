@@ -1,6 +1,6 @@
 package strategy;
 
-public class Dog implements Comparable{
+public class Dog implements Comparable<Dog>{
     int food;
 
     public Dog(){}
@@ -9,8 +9,7 @@ public class Dog implements Comparable{
         this.food = food;
     }
 
-    public int compareTo(Object o){
-        Dog dog = (Dog)o;
+    public int compareTo(Dog dog){
         if (food > dog.food) {return 1;}
         else if (food < dog.food) {return -1;}
         else return 0;
